@@ -6,13 +6,13 @@ def readLinesFromFile(fileName):
 	# clean line ends from lines
 	return [line.strip() for line in lines]
 
-def convert_to_numeric(char):
+def convert_to_numeric(numberAsString: str):
     # Dictionary mapping spelled-out digits to their numerical values
-    digit_mapping = {'one': '1', 'two': '2', 'three': '3', 'four': '4', 'five': '5',
-                     'six': '6', 'seven': '7', 'eight': '8', 'nine': '9'}
+    digit_mapping = {'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5,
+                     'six': 6, 'seven': 7, 'eight': 8, 'nine': 9}
 
     # Return the corresponding numerical value or the original character if not a spelled-out digit
-    return digit_mapping.get(char, char)
+    return digit_mapping.get(numberAsString)
 
 def calcCalibrationValue(fileName):
 	lines = readLinesFromFile(fileName)
